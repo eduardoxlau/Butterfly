@@ -1,21 +1,24 @@
 import express from "express";
-import { createFeedBack, questions } from "./data";
+import { createFeedback } from "./db/feedback/feedback.dal";
+import { getQuestionsByMood } from "./db/question/question.dal";
 import { AddFeedback } from "./types";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   const mood: number = parseInt(req.query.v?.toString() || "1");
 
-  res.send(questions.filter((question) => question.mood === mood));
+  const questions = await getQuestionsByMood(mood);
+
+  res.send(questions);
 });
 
-router.post("/feedback", (req, res) => {
+router.post("/feedback", async (req, res) => {
   const feedback: AddFeedback = req.body;
 
-  const feedbacks = createFeedBack(feedback);
+  const newFeedback = await createFeedback(feedback);
 
-  res.send(feedbacks);
+  res.send(newFeedback);
 });
 
 export default router;

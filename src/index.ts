@@ -1,4 +1,5 @@
 import express from "express";
+import initDb from "./db/init";
 import router from "./routes";
 
 const app = express();
@@ -11,3 +12,5 @@ app.use("/api", router);
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
+
+initDb();

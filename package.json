@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc",
     "lint": "eslint . --ext .ts",
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "NODE_ENV=dev ts-node-dev src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rafael sanchez <sanchezpazrafael@gmail.com>",
@@ -16,10 +16,14 @@
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "eslint": "^8.28.0",
+    "sequelize-cli": "^6.5.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.26.0"
   }
 }

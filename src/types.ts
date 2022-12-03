@@ -1,16 +1,12 @@
-export interface Question {
-  id: number;
+export interface AddQuestion {
   title: string;
   mood: number;
 }
-
-export interface Answer {
-  id: number;
+export interface AddAnswer {
   questionId: number;
   score: number;
   comment: string;
 }
-export type AddAnswer = Omit<Answer, "id">;
 
 export interface AddFeedback {
   answers: AddAnswer[];
