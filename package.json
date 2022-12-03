@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "NODE_ENV=dev tsc",
+    "start": "node ./build/index.js",
     "lint": "eslint . --ext .ts",
     "dev": "NODE_ENV=dev ts-node-dev src/index.ts",
+    "db:seeds": "NODE_ENV=dev ts-node-dev src/db/seeds.ts",
     "test": "NODE_ENV=test jest"
   },
   "author": "Rafael sanchez <sanchezpazrafael@gmail.com>",

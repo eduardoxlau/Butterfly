@@ -1,15 +1,9 @@
 import request from "supertest";
 import init from "./db/init";
 import { Question } from "./db/question/question.model";
+import { questionsMock } from "./db/seeds";
 import app from "./index";
-import { AddFeedback, AddQuestion } from "./types";
-
-const questionsMock: AddQuestion[] = [...Array(50).keys()].map(
-  (index: number) => ({
-    title: `Question ${index}`,
-    mood: Math.floor(Math.random() * 5) + 1,
-  })
-);
+import { AddFeedback } from "./types";
 
 describe("Routes", () => {
   beforeAll(async () => {
