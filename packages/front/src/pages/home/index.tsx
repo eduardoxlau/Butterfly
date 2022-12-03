@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { moods } from "../../utils";
 import {
   Banner,
   Card,
@@ -24,30 +25,13 @@ export const Home = () => (
         </Span>
       </div>
       <WrapperMoods>
-        <Link to="/1">
-          <Mood>
-            <img src="./images/mood-1.v2.png" alt="" />
-          </Mood>
-        </Link>
-        <Link to="/2">
-          <Mood>
-            <img src="./images/mood-2.v2.png" alt="" />
-          </Mood>
-        </Link>
-        <Link to="/3">
-          <Mood>
-            <img src="./images/mood-3.v2.png" alt="" />
-          </Mood>
-        </Link>
-        <Link to="/4">
-          <Mood>
-            <img src="./images/mood-4.v2.png" alt="" />
-          </Mood>
-          <Link to="/5"></Link>
-          <Mood>
-            <img src="./images/mood-5.v2.png" alt="" />
-          </Mood>
-        </Link>
+        {moods.map(({ id, path }) => (
+          <Link to={`/${id}`} key={id}>
+            <Mood>
+              <img src={process.env.PUBLIC_URL + path} alt="" />
+            </Mood>
+          </Link>
+        ))}
       </WrapperMoods>
       <br />
       <div>

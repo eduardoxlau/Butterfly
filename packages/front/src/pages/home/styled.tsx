@@ -27,11 +27,12 @@ export const Card = styled.div`
   padding: 1rem 1rem;
 `;
 
-export const WrapperMoods = styled.div``;
+export const WrapperMoods = styled.div`
+  display: flex;
+`;
 
-export const Mood = styled.a`
+export const Mood = styled.div`
   margin: 0.2rem;
-  cursor: pointer;
   img {
     width: 5rem;
   }
@@ -47,9 +48,10 @@ export const Span = styled.div<{
   fontSize?: string;
   bold?: boolean;
   margin?: string;
+  color?: string;
 }>`
   margin: ${({ margin }) => margin};
   font-family: ${({ bold }) => (bold ? "helveticaBold" : "helvetica")};
   font-size: ${({ fontSize }) => fontSize || "1rem"};
-  color: #606060;
+  color: ${({ color }) => color || "#606060"};
 `;
