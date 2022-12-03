@@ -14,3 +14,5 @@ app.listen(port, () => {
 });
 
 initDb();
+
+export default app;

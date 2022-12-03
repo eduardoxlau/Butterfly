@@ -9,7 +9,11 @@ type QuestionAttributes = {
   mood: number;
 };
 
-export class Question extends Model<QuestionAttributes, AddQuestion> {}
+export class Question extends Model<QuestionAttributes, AddQuestion> {
+  id!: number;
+  title!: string;
+  mood!: number;
+}
 
 Question.init(
   {
