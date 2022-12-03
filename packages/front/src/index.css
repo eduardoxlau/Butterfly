@@ -1,1 +1,18 @@
 @import-normalize;
+
+@font-face {
+  font-family: "helvetica";
+  src: local("helvetica"),
+    url("./../public/Helvetica-Font/Helvetica.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "helveticaBold";
+  src: local("helveticaBold"),
+    url("./../public/Helvetica-Font/Helvetica-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
