@@ -1,17 +1,26 @@
 import { Dialect, Sequelize } from "sequelize";
 import dotenv from "dotenv";
 
-dotenv.config({ path: __dirname + `/../../.env.${process.env.NODE_ENV}` });
+dotenv.config({ path: __dirname + `/../../.env` });
 
-const dbName = process.env.DB_NAME || "";
-const dbUser = process.env.DB_USER || "";
-const dbHost = process.env.DB_HOST || "";
-const dbDriver = process.env.DB_DRIVER as Dialect;
-const dbPassword = process.env.DB_PASSWORD || "";
+const database = process.env.DB_NAME || "";
+const username = process.env.DB_USER || "";
+const host = process.env.DB_HOST || "";
+const dialect = process.env.DB_DRIVER as Dialect;
+const password = process.env.DB_PASSWORD || "";
 
-const sequelizeConnection = new Sequelize(dbName, dbUser, dbPassword, {
-  host: dbHost,
-  dialect: dbDriver,
-});
+const isTest = process.env.NODE_ENV === "test";
+
+const sequelizeConnection = new Sequelize(
+  isTest
+    ? { dialect: "sqlite" }
+    : {
+        database,
+        username,
+        host,
+        dialect,
+        password,
+      }
+);
 
 export default sequelizeConnection;

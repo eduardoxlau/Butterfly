@@ -8,9 +8,7 @@ type FeedbackAttributes = {
   extraComment: string;
 };
 
-export class Feedback extends Model<FeedbackAttributes, AddFeedback> {
-  declare answers: Answer[];
-}
+export class Feedback extends Model<FeedbackAttributes, AddFeedback> {}
 
 Feedback.init(
   {
