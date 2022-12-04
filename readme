@@ -1,0 +1,36 @@
+# Butterfly Demo
+
+Follow the instructions below to run the applications successfully
+
+- Both applications are build as workspace and configured with
+  Lerna
+
+> 💡 for more information check the [documentation](https://lerna.js.org/docs/getting-started)
+
+    npm install
+
+- Once the above command is executed, configure the database for that
+  there is a docker-compose with all the necessary configuration
+
+>
+
+    docker compose up -d
+
+- Populate the database so that it has questions already set randomly
+
+  >
+
+      npm run db:seeds
+
+- Finally you run the applications in a single command
+
+>
+
+    npm run dev
+
+> Note: Check the package.json file in the differents workspace to see
+> more details.
+
+There are some tests for the backend, to run them run
+
+    npm run test
