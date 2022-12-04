@@ -34,3 +34,5 @@ Follow the instructions below to run the applications successfully
 There are some tests for the backend, to run them run
 
     npm run test
+    
+to validate the saved records go to http://localhost:4000/api/feedbacks
