@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Mood, moods } from "../../../utils";
+import { Link, useParams } from "react-router-dom";
+import { Mood, moods } from "../../../utils/types";
 import { Span } from "../../home/styled";
 import {
   ChangeMoodContainer,
@@ -10,14 +10,14 @@ import {
   WrapperMoodsImage,
 } from "./styled";
 
-export const HeaderContent = ({
-  mood,
-  setMood,
-}: {
-  mood: Mood;
-  setMood: any;
-}) => {
+export const HeaderContent = ({ setMood }: { setMood: any }) => {
+  let { id } = useParams();
+
   const [isEditMood, setEditMood] = useState<boolean>(false);
+
+  const mood: Mood | undefined = moods.find((mood) => mood.id === Number(id));
+
+  if (!mood) return <>Error</>;
 
   return (
     <Header>

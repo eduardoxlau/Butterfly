@@ -30,7 +30,7 @@ export const LeftBar = styled.div`
 export const QuestionBody = styled.div`
   padding: 2rem 3rem;
   overflow-y: auto;
-  flex: 1 0 auto;
+  width: 100%;
   position: relative;
 
   .optional-comment {

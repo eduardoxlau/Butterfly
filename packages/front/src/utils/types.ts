@@ -31,3 +31,20 @@ export const moods: Mood[] = [
     message: "Awesome! Thank you for your Feedback.",
   },
 ];
+
+export interface Answer {
+  questionId: number;
+  score: number;
+  comment: string;
+}
+
+export interface Feedback {
+  answers: Answer[] | undefined;
+  extraComment: string;
+}
+
+export interface IQuestion {
+  id: number;
+  title: string;
+  mood: number;
+}

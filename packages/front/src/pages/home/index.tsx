@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { moods } from "../../utils";
+import { moods } from "../../utils/types";
 import {
   Banner,
   Card,
