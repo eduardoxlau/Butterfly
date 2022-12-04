@@ -15,7 +15,7 @@ export const fetchApi = async ({
   };
 
   if (method === "POST") {
-    parameters.data = JSON.stringify(data);
+    parameters.body = JSON.stringify(data);
   }
   const response = await fetch(url, parameters);
 
