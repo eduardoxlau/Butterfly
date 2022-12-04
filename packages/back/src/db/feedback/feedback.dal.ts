@@ -12,3 +12,14 @@ export const createFeedback = (feedback: AddFeedback): Promise<Feedback> => {
     ],
   });
 };
+
+export const getFeedbacks = (): Promise<Feedback[]> => {
+  return Feedback.findAll({
+    include: [
+      {
+        model: Answer,
+        as: "answers",
+      },
+    ],
+  });
+};

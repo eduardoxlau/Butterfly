@@ -1,5 +1,5 @@
 import express from "express";
-import { createFeedback } from "./db/feedback/feedback.dal";
+import { createFeedback, getFeedbacks } from "./db/feedback/feedback.dal";
 import { getQuestionsByMood } from "./db/question/question.dal";
 import { AddFeedback } from "./types";
 
@@ -19,6 +19,12 @@ router.post("/feedback", async (req, res) => {
   const newFeedback = await createFeedback(feedback);
 
   res.send(newFeedback);
+});
+
+router.get("/feedbacks", async (_req, res) => {
+  const feedbacks = await getFeedbacks();
+
+  res.send(feedbacks);
 });
 
 export default router;
